@@ -3,7 +3,7 @@
     <div class="hidden sm:block h-full">
       <ul class="sm:flex gap-8 justify-center h-full items-center">
         <li v-for="(link, i) in links" :key="i">
-          <a class="nav-link" :href="link.route">{{ link }}</a>
+          <a class="nav-link" :href="link.route">{{ link.name }}</a>
         </li>
       </ul>
     </div>
