@@ -1,0 +1,10 @@
+@import './assets/styles/tailwind';
+@import './assets/styles/normalize';
+
+html,
+body {
+  height: 100%;
+
+  //set default black to an off black
+  color: #1D1B26;
+}
