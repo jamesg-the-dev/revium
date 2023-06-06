@@ -1,24 +1,13 @@
 # revium
 
-## Project setup
-```
-npm install
-```
+## Get Started
+- run `npm run serve`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features if I had more time
+- import sass variables from `src/assets/styles/_variables.scss` globally
+- either setup an RxJS observable for sharing data between components or use vue's event bus concept (the use case would be for the burger menu trigger in this particular instrance)
+- optimise the carousel and images.
+- design the mobile menu better
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Time Taken
+- 2.5 hours
