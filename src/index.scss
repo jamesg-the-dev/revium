@@ -6,6 +6,10 @@ html,
 body {
   height: 100%;
 
-  //set default black to an off black
+  //set default text color to an off black
   color: $black;
+}
+
+.wrap {
+  max-width: 850px;
 }

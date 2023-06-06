@@ -19,7 +19,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/styles/variables';
+@import "../assets/styles/variables";
 nav {
   z-index: 1000;
   height: 4rem;
