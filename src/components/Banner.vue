@@ -1,5 +1,5 @@
 <template>
-  <carousel wrapAround transition="850" autoplay="4000" class="banner">
+  <carousel wrapAround transition="850" autoplay="10000" class="banner">
     <slide v-for="(image, i) in images" :key="i">
       <img :src="image" alt="" />
     </slide>
@@ -34,7 +34,7 @@ img {
   height: 100vh;
   width: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
+  filter: brightness(0.6);
 }
 
 .banner {
