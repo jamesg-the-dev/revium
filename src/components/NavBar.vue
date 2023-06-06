@@ -1,19 +1,36 @@
 <template>
   <nav class="fixed text-xl w-full">
-    <div class="flex gap-8 justify-center h-full items-center">
-      <a class="nav-link" href="#">Home</a>
-      <a class="nav-link" href="#">About</a>
-      <a class="nav-link" href="#">Contact Us</a>
+    <div class="hidden sm:block h-full">
+      <ul class="sm:flex gap-8 justify-center h-full items-center">
+        <li v-for="(link, i) in links" :key="i">
+          <a class="nav-link" :href="link.route">{{ link }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-3">
+      <burger-menu class="block ml-auto" @trigger="handleTrigger" />
     </div>
   </nav>
 </template>
 
 <script lang="ts">
+import { NavigationService } from "@/services/navigation.service";
 import { defineComponent } from "vue";
+import BurgerMenu from "./BurgerMenu.vue";
 
 export default defineComponent({
-  setup() {
-    //
+  components: { BurgerMenu },
+  emits: ["trigger"],
+  setup(props, { emit }) {
+    const navigationService = NavigationService.links;
+
+    function handleTrigger(event: boolean) {
+      emit("trigger", event);
+    }
+    return {
+      links: navigationService,
+      handleTrigger,
+    };
   },
 });
 </script>

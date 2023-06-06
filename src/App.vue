@@ -1,5 +1,6 @@
 <template>
-  <nav-bar />
+  <nav-bar @trigger="handleTrigger" />
+  <mobile-nav :show="state.show" />
   <banner />
   <main class="p-5">
     <section>
@@ -38,8 +39,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 import Banner from "./components/Banner.vue";
+import MobileNav from "./components/MobileNav.vue";
 import NavBar from "./components/NavBar.vue";
 
 export default defineComponent({
@@ -47,6 +49,21 @@ export default defineComponent({
   components: {
     NavBar,
     Banner,
+    MobileNav,
+  },
+  setup() {
+    const state = reactive({
+      show: false,
+    });
+
+    function handleTrigger(event: boolean) {
+      state.show = event;
+    }
+
+    return {
+      state,
+      handleTrigger,
+    };
   },
 });
 </script>
